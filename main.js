@@ -1,10 +1,20 @@
 'use strict';
 
 const display = document.getElementById( 'output' );
+const operate = document.getElementById( 'operater' );
 
 function set(nums) {
-  display.textContent += nums.textContent;
-  
+  if(display.textContent == 0) {
+    display.textContent = nums.textContent;
+  }else {
+    display.textContent += nums.textContent;
+  }
+}
+
+function operating(nums) {
+  if(display.textContent.slice(-1) === "+"){
+    display.textContent !== "+";
+  }
 }
 
 function calc() {
@@ -12,5 +22,5 @@ function calc() {
 }
 
 function reset() {
-  display.textContent = ""
+  display.textContent = 0
 }
