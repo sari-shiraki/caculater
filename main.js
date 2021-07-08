@@ -1,19 +1,29 @@
 'use strict';
 
-const display = document.getElementById( 'output' );
-const operate = document.getElementById( 'operater' );
+const display = document.getElementById("output");
+const pushOperate = document.getElementsByClassName('operator');
+
+
 
 function set(nums) {
-  if(display.textContent == 0) {
+  if(display.textContent == 0 ) {
     display.textContent = nums.textContent;
-  }else {
+  }else{
     display.textContent += nums.textContent;
   }
 }
 
-function operating(nums) {
-  if(display.textContent.slice(-1) === "+"){
-    display.textContent !== "+";
+function operate(mark) {
+  if (display.textContent.slice(-1) === "+" ||
+      display.textContent.slice(-1) === "-" ||
+      display.textContent.slice(-1) === "*" ||
+      display.textContent.slice(-1) === "/" ||
+      display.textContent.slice(-1) === "."
+      ) {
+    const f = display.textContent.slice(0,-1)
+    display.textContent = f + mark.textContent;
+  }else{
+    display.textContent += mark.textContent;
   }
 }
 
